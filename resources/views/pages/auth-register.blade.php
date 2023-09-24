@@ -52,7 +52,7 @@
                             type="password"
                             class="form-control pwstrength"
                             data-indicator="pwindicator"
-                            name="password">
+                            name="password" placeholder="Password 8 Karakter">
                         <div id="pwindicator"
                             class="pwindicator">
                             <div class="bar"></div>
@@ -65,7 +65,7 @@
                         <input id="password2"
                             type="password"
                             class="form-control"
-                            name="password-confirm">
+                            name="password-confirm" placeholder="Password 8 Karakter">
                     </div>
                 </div>
 

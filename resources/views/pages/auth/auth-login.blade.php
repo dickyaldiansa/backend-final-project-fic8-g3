@@ -15,22 +15,18 @@
         </div>
 
         <div class="card-body">
-            <form method="POST"
-                action="#"
-                class="needs-validation"
-                novalidate="">
+            <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
+                @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input id="email"
-                        type="email"
-                        class="form-control"
-                        name="email"
-                        tabindex="1"
-                        required
-                        autofocus>
+                    <input id="email" type="email" 
+                    class="form-control @error('email') is-invalid
+                    @enderror" name="email" tabindex="1" required autofocus>
+                    @error('email')
                     <div class="invalid-feedback">
-                        Please fill in your email
+                        {{ $message }}
                     </div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
@@ -46,26 +42,18 @@
                     </div>
                     <input id="password"
                         type="password"
-                        class="form-control"
+                        class="form-control @error('password') is-invalid  @enderror"
                         name="password"
                         tabindex="2"
-                        required>
+                        >
+                        @error('password')
                     <div class="invalid-feedback">
-                        please fill in your password
+                        {{ $message }}
                     </div>
+                    @enderror
                 </div>
 
-                <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox"
-                            name="remember"
-                            class="custom-control-input"
-                            tabindex="3"
-                            id="remember-me">
-                        <label class="custom-control-label"
-                            for="remember-me">Remember Me</label>
-                    </div>
-                </div>
+               
 
                 <div class="form-group">
                     <button type="submit"
@@ -75,21 +63,8 @@
                     </button>
                 </div>
             </form>
-            <div class="mt-4 mb-3 text-center">
-                <div class="text-job text-muted">Login With Social</div>
-            </div>
-            <div class="row sm-gutters">
-                <div class="col-6">
-                    <a class="btn btn-block btn-social btn-facebook">
-                        <span class="fab fa-facebook"></span> Facebook
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a class="btn btn-block btn-social btn-twitter">
-                        <span class="fab fa-twitter"></span> Twitter
-                    </a>
-                </div>
-            </div>
+           
+          
 
         </div>
     </div>
