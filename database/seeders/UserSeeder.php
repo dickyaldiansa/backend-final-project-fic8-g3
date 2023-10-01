@@ -21,7 +21,8 @@ class UserSeeder extends Seeder
         'name'=>'Aldiansa Admin',
         'email'=>'dickyaldiansa@gmail.com',
         'email_verified_at'=> now(),
-        'password'=> Hash::make('123456'),
+        'password'=> Hash::make('12345678'),
+        'roles'=>'mahasiswa',
        ]);
        
     }
