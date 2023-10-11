@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('pages.auth.auth-login');
 });
 
-Route::middleware(['auth'])->group(function(){
-    Route::get('home',function(){
+Route::middleware(['auth'])->group(function() {
+    Route::get('home',function () {
         return view('pages.app.dashboard-siakad',['type_menu' => '']);
     })->name('home');
     Route::resource('user', UserController::class);
