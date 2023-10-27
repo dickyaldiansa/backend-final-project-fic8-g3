@@ -15,7 +15,6 @@ return new class extends Migration
             $table->string('roles')->after('email')->default('mahasiswa');
             $table->string('phone')->after('roles')->nullable();
             $table->string('address')->after('phone')->nullable();
-            //
         });
     }
 
@@ -28,7 +27,6 @@ return new class extends Migration
             $table->dropColumn('roles');
             $table->dropColumn('phone');
             $table->dropColumn('address');
-            //
         });
     }
 };

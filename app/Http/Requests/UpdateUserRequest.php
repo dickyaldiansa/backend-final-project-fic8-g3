@@ -22,6 +22,8 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'subject_id'=>'string',
+            'student_id'=>'string',
             'name'=>'required|string|max:80',
             'email'=>'required|email',
             'phone'=>'string',

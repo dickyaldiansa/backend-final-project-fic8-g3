@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\KhsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,20 @@ Route::middleware(['auth'])->group(function() {
         return view('pages.app.dashboard-siakad',['type_menu' => '']);
     })->name('home');
     Route::resource('user', UserController::class);
-   
     });
+
+   
+    Route::middleware(['auth'])->group(function() {
+    Route::resource('khs', KhsController::class);
+});
+
+
+ 
+
+    
+ 
+      
+       
 
 
 
