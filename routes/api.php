@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\Api\AuthController;
-
+use App\Http\Controllers\Api\KhsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,5 +28,11 @@ Route::post('/logout', [AuthController::class, 'logout'])
 
 
 // api route for khs with middleware auth
+
+
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::apiResource('khsapi', KhsController::class);
+});
 
 

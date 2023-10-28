@@ -25,6 +25,8 @@ class Khs extends Model
         'updated_by',
     ];
 
+   
+
     public function student()
     {
         return $this->belongsTo(User::class);
@@ -35,5 +37,7 @@ class Khs extends Model
         return $this->belongsTo(Subject::class);
     }
 
+
+    
     
 }

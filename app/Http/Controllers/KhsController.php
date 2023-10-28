@@ -122,6 +122,7 @@ public function update(Request $request, $id)
     $khs->update($request->all());
 
     return redirect()->route('khs.index')->with('success', 'KHS updated successfully');
+   
 }
 
   
