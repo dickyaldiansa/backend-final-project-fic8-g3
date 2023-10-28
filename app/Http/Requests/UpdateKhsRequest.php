@@ -22,11 +22,12 @@ class UpdateKhsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nilai'=>'string',
-            'grade'=>'string',
-            'keterangan'=>'string',
-            'tahun_akademik'=>'string',
-            'semester'=>'string',
+            'nilai'=>'required|string',
+            'grade'=>'required|string',
+            'keterangan'=>'required|string',
+            'tahun_akademik'=>'required|string',
+            'semester'=>'required|string',
+           
             
         ];
     }

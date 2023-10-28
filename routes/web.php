@@ -28,8 +28,9 @@ Route::middleware(['auth'])->group(function() {
 
    
     Route::middleware(['auth'])->group(function() {
-    Route::resource('khs', KhsController::class);
+       Route::resource('khs', KhsController::class);
 });
+
 
 
  

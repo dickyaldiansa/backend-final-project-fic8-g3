@@ -29,7 +29,7 @@ class StoreKhsRequest extends FormRequest
             'keterangan'=>'string',
             'tahun_akademik'=>'string',
             'semester'=>'string',
-            'created_by'=>'string',
+            'created_by'=>'string'
            
             
         ];

@@ -115,9 +115,9 @@ class KhsController extends Controller
 
     public function update(UpdateKhsRequest $request, Khs $khs)
 {
-    $validatedData = $request->validated();
+    $validated = $request->validated();
 
-    $khs->update($validatedData);
+    $khs->update($validated);
 
     return redirect()->route('khs.index')->with('success', 'KHS updated successfully');
 }

@@ -21,7 +21,8 @@ class Khs extends Model
         'keterangan',
         'tahun_akademik',
         'semester',
-        
+        'created_by',
+        'updated_by',
     ];
 
     public function student()

@@ -29,7 +29,7 @@
                                     <h4>Edit Khs</h4>
                                     <form action="{{ route('khs.update', $khs) }}" method="POST">
                                         @csrf
-                                        @method('PUT')
+                                        @method('PATCH')
  
                                 </div>
                                 <div class="card-body">
@@ -71,29 +71,26 @@
 
                                         <div class="form-group">
                                             <label>Keterangan</label>
-                                            <select name="keterangan"  class="form-control">
-                                                <option value="{{$khs->keterangan}}">{{$khs->keterangan}}</option>
-                                                <option value="Lulus">Lulus</option>
-                                                <option value="Tidak Lulus">Tidak Lulus</option>
+                                            <select name="keterangan"  class="form-control select2 @error('keterangan') is-invalid @enderror">
+                                                <option value="Lulus" @if ($khs->keterangan == 'Lulus') selected @endif>Lulus</option>
+                                                <option value="Tidak Lulus" @if ($khs->keterangan == 'Tidak Lulus') selected @endif>Tidak Lulus</option>
                                             </select>
                                         </div>
-                                   
+
                                         <div class="form-group">
                                             <label>Tahun Akademik</label>
-                                            <select name="tahun_akademik" class="form-control">
-                                                <option value="{{$khs->tahun_akademik}}">{{$khs->tahun_akademik}}</option>
-                                                <option value="2023/2024">2023/2024</option>
-                                                <option value="2022/2023">2022/2023</option>
-                                                <option value="2021/2022">2021/2022</option>
-                                                <option value="2020/2021">2020/2021</option> 
+                                            <select name="tahun_akademik" class="form-control select2 @error('tahun-akademik') is-invalid @enderror">
+                                                <option value="2023/2024" @if ($khs->tahun_akademik == '2023/2024') selected @endif>2023/2024</option>
+                                                <option value="2022/2023" @if ($khs->tahun_akademik == '2022/2023') selected @endif>2022/2023</option>
+                                                <option value="2021/2022" @if ($khs->tahun_akademik == '2021/2022') selected @endif>2021/2022</option>
+                                                <option value="2020/2021" @if ($khs->tahun_akademik == '2020/2021') selected @endif>2020/2021</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Semester</label>
-                                            <select name="semester" class="form-control">
-                                                <option value="{{$khs->semester}}">{{$khs->semester}}</option>
-                                                <option value="Genap">Genap</option>
-                                                <option value="Ganjil">Ganjil</option>
+                                            <select name="semester" class="form-control select2 @error('semester') is-invalid @enderror">
+                                                <option value="Genap" @if ($khs->semester == 'Genap') selected @endif>Genap</option>
+                                                <option value="Ganjil" @if ($khs->semester == 'Ganjil') selected @endif>Ganjil</option>
                                             </select>
                                         </div>
                                 <div class="card-footer text-right">
