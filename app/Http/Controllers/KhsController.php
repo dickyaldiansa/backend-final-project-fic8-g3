@@ -113,11 +113,13 @@ class KhsController extends Controller
      */
    
 
-    public function update(UpdateKhsRequest $request, Khs $khs)
-{
-    $validated = $request->validated();
 
-    $khs->update($validated);
+
+public function update(Request $request, $id)
+{
+    $khs = Khs::find($id);
+
+    $khs->update($request->all());
 
     return redirect()->route('khs.index')->with('success', 'KHS updated successfully');
 }
